@@ -59,7 +59,21 @@ h1,.mega{
   line-height:.78;letter-spacing:-.08em;margin:0;text-transform:uppercase;font-weight:950;
 }
 .highlight{background:linear-gradient(135deg,var(--wine),var(--rose));color:var(--bone);padding:.01em .08em .08em;display:inline-block;transform:rotate(-1deg)}
-.hero-sub{font-size:clamp(24px,2vw,34px);line-height:1.02;font-weight:900;letter-spacing:-.04em;max-width:620px}
+.hero-sub {
+    margin-top: 42px;
+    font-size: 22px;
+    line-height: 1.22;
+    letter-spacing: -.03em;
+    max-width: 92%;
+}
+  .hero-sub p {
+  margin: 0 0 18px;
+}
+
+.hero-sub p:last-child {
+  margin-bottom: 0;
+}
+  
 .buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
@@ -264,7 +278,10 @@ footer{background:var(--black);color:var(--bone);padding:48px 28px}.news{display
   <section class="hero">
     <div class="hero-copy">
       <div><div class="kicker">VOICE / POSITIONING / MESSAGING / IDENTITY / WEBSITES</div><h1>For bold<br>businesses<br>stuck in<br><span class="highlight">boring</span><br>branding.</h1></div>
-      <div><div class="hero-sub">You don’t need another generic logo. You need someone who can help uncover what already makes your business compelling — and build the brand around it.</div><div class="buttons"><a class="btn route" href="#start">Start With a Brand Plan</a><a class="btn alt route" href="#process">How It Works</a></div></div>
+      <div><div class="hero-sub">
+  <p>You don’t need another generic logo.</p>
+  <p>You need someone who can uncover what already makes your business compelling and build the brand around it.</p>
+      </div><div class="buttons"><a class="btn route" href="#start">Start With a Brand Plan</a><a class="btn alt route" href="#process">How It Works</a></div></div>
     </div>
     <div class="hero-image"><div class="callout">Make them care before they click.</div></div>
   </section>
