@@ -123,6 +123,136 @@ h1,.mega{
 input,textarea{width:100%;padding:18px;border:2px solid var(--black);background:var(--paper);font-size:16px;font-weight:700}textarea{min-height:160px;grid-column:1/-1}
 footer{background:var(--black);color:var(--bone);padding:48px 28px}.news{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}.news h2{font-size:clamp(42px,6vw,90px);line-height:.88;letter-spacing:-.06em;text-transform:uppercase;margin:0 0 18px;font-weight:950}.subscribe{display:flex;gap:12px;flex-wrap:wrap}.subscribe input{min-width:320px;background:transparent;color:var(--bone);border-color:var(--bone)}
 @media(max-width:900px){header{flex-direction:column;align-items:flex-start;gap:18px}nav{flex-wrap:wrap}.hero,.manifesto,.page-head,.grid-two,.proof,.process-grid,.blog-grid,.about,.contact,.news,.mini-grid,.home-thoughts{display:block}.hero-copy,.man-left,.portrait,.contact-left{border-right:0;border-bottom:2px solid var(--black)}.proof-item,.step,.blog,.card,.mini{border-right:0;margin-bottom:18px}.hero-image{min-height:520px}.page,.contact-form,.contact-left,.about-copy,.man-left,.man-right,.hero-copy{padding:40px 22px}.ticker{font-size:40px}}
+
+/* MOBILE RHYTHM FIXES */
+@media (max-width: 768px) {
+  header {
+    padding: 36px 28px 34px;
+    gap: 28px;
+  }
+
+  nav {
+    gap: 22px 28px;
+    line-height: 1.8;
+  }
+
+  .hero-copy {
+    padding: 76px 28px 64px;
+  }
+
+  .kicker {
+    margin-bottom: 42px;
+    line-height: 1.7;
+  }
+
+  h1,
+  .mega {
+    font-size: clamp(58px, 17vw, 92px);
+    line-height: 0.86;
+    letter-spacing: -0.075em;
+  }
+
+  .highlight {
+    display: inline-block;
+    margin: 8px 0 10px;
+  }
+
+  .hero-sub {
+    margin-top: 42px;
+    font-size: 28px;
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+  }
+
+  .buttons {
+    margin-top: 56px;
+    gap: 22px;
+  }
+
+  .btn {
+    min-height: 60px;
+    padding: 18px 24px;
+  }
+
+  section {
+    scroll-margin-top: 120px;
+  }
+
+  .manifesto,
+  .page,
+  .about,
+  .contact {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+
+  .man-left,
+  .man-right,
+  .about-copy,
+  .contact-left,
+  .contact-form {
+    padding: 72px 28px;
+  }
+
+  .big-head,
+  .man-left h2 {
+    font-size: clamp(56px, 16vw, 88px);
+    line-height: 0.86;
+  }
+
+  .big-body {
+    font-size: 34px;
+    line-height: 1.02;
+  }
+
+  .body,
+  .article p {
+    font-size: 21px;
+    line-height: 1.45;
+  }
+
+  .process-grid {
+    box-shadow: 8px 8px 0 var(--wine);
+  }
+
+  .step {
+    padding: 46px 28px;
+    min-height: auto;
+  }
+
+  .step h3 {
+    font-size: clamp(54px, 15vw, 86px);
+    line-height: 0.86;
+    margin-bottom: 34px;
+  }
+
+  .step p {
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .proof-item,
+  .blog,
+  .card {
+    padding: 38px 28px;
+  }
+
+  .quote {
+    font-size: 38px;
+    line-height: 1;
+  }
+
+  footer {
+    padding: 72px 28px;
+  }
+
+  .news h2 {
+    font-size: clamp(48px, 14vw, 78px);
+    line-height: 0.88;
+  }
+}
+
+
 </style>
 </head>
 <body>
