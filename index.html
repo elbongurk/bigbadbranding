@@ -66,6 +66,24 @@ h1{margin:0;font-size:clamp(74px,10.8vw,168px);line-height:.92;letter-spacing:-.
 .buttons{display:flex;flex-wrap:wrap;gap:20px;margin-top:38px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:14px 22px;border:var(--border);background:var(--black);color:var(--bone);text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:900;box-shadow:var(--shadow)}
 .btn.alt{background:transparent;color:var(--black);box-shadow:none}
+  .hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  margin-top:38px;
+  align-items:center;
+  max-width:900px;
+}
+
+.hero-buttons .btn{
+  min-width:320px;
+  white-space:normal;
+  text-align:center;
+}
+
+.hero-buttons .btn.alt{
+  min-width:220px;
+}
 
 .hero{min-height:82vh;display:block}
 .hero-copy{padding:62px 42px 86px;border-right:0;display:flex;flex-direction:column;justify-content:center;gap:38px;max-width:none;min-height:82vh}
@@ -287,7 +305,10 @@ footer .kicker{color:rgba(243,235,222,.68);padding-bottom:14px}
       <div>
         <div class="hero-sub">For businesses with real substance, real taste,<br>and a brand that has not caught up yet.</div>
         <div class="hero-soft">You’ve done the hard part. The work is good. The trust is real. You are not the problem, your brand is making people work too hard to see it.</div>
-        <div class="buttons"><a class="btn route" href="https://calendly.com/elbongurk/elbongurk-design-fit-call-clone-2">Book a Free 20-Minute Fit Call</a><a class="btn alt route" href="#work">See The Work</a></div>
+        <div class="buttons hero-buttons">
+  <a class="btn" href="https://calendly.com/elbongurk/elbongurk-design-fit-call-clone-2">Book a Free 20-Minute Fit Call</a>
+  <a class="btn alt route" href="#work">See The Work</a>
+</div>
       </div>
     </div>
   </section>
