@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Big Bad Branding</title>
-
+<title>Big Bad Branding - Revised Homepage</title>
 <style>
-:root {
+:root{
   --bone:#f3ebde;
   --paper:#fff8ef;
   --wine:#7f2030;
@@ -15,32 +14,26 @@
   --lav:#d8d2ff;
   --muted:rgba(9,9,9,.72);
   --border:2px solid var(--black);
-  --shadow-wine:6px 6px 0 var(--wine);
-  --section-pad:64px 34px 84px;
+  --shadow:6px 6px 0 var(--wine);
 }
-
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
   margin:0;
   background:var(--bone);
   color:var(--black);
-  font-family:Arial, Helvetica, sans-serif;
-  background-image:radial-gradient(rgba(255,255,255,.14) 1px, transparent 1px);
+  font-family:Arial,Helvetica,sans-serif;
+  background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1px);
   background-size:18px 18px;
   overflow-x:hidden;
 }
+a{text-decoration:none;color:inherit}
+.serif{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:500}
+section{border-bottom:var(--border)}
+.view{display:none;scroll-margin-top:110px}
+.view.active{display:block}
 
-a { color:inherit; text-decoration:none; }
-.serif { font-family:Georgia, 'Times New Roman', serif; font-style:italic; font-weight:500; }
-
-/* ROUTED PAGE VIEWS */
-.view { display:none; }
-.view.active { display:block; }
-section { border-bottom:var(--border); }
-
-/* HEADER */
-header {
+header{
   position:sticky;
   top:0;
   z-index:50;
@@ -52,710 +45,197 @@ header {
   backdrop-filter:blur(12px);
   border-bottom:var(--border);
 }
-
-.logo {
-  display:flex;
-  align-items:center;
-  gap:14px;
-  font-weight:900;
+.logo{display:flex;align-items:center;gap:14px;font-weight:900}
+.logo-mark{
+  width:56px;height:40px;display:grid;place-items:center;position:relative;
+  background:var(--black);color:var(--bone);border-radius:999px 999px 8px 8px;
+  font-size:20px;font-weight:900;
 }
-.logo-mark {
-  width:56px;
-  height:40px;
-  display:grid;
-  place-items:center;
-  position:relative;
+.logo-mark:before,.logo-mark:after{content:"";position:absolute;top:-9px;border-left:9px solid transparent;border-right:9px solid transparent;border-bottom:16px solid var(--black)}
+.logo-mark:before{left:8px;transform:rotate(-18deg)}
+.logo-mark:after{right:8px;transform:rotate(18deg)}
+.logo-text{line-height:.88;font-size:20px;letter-spacing:-.04em;text-transform:uppercase}
+.menu-toggle{display:none}
+nav{display:flex;gap:22px;align-items:center;font-size:12px;text-transform:uppercase;font-weight:900;letter-spacing:.16em}
+.nav-btn{background:var(--black);color:var(--bone);padding:12px 16px}
+
+.kicker{margin-bottom:0;padding-bottom:25px;font-size:11px;line-height:1.4;font-weight:900;letter-spacing:.22em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(84px,12vw,190px);line-height:.9;letter-spacing:-.065em;text-transform:uppercase;font-weight:950;max-width:none}
+.big-head{margin:0;font-size:clamp(52px,7vw,104px);line-height:.9;letter-spacing:-.07em;text-transform:uppercase;font-weight:950}
+.body{max-width:680px;font-size:20px;line-height:1.45;color:var(--muted)}
+.buttons{display:flex;flex-wrap:wrap;gap:20px;margin-top:38px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:14px 22px;border:var(--border);background:var(--black);color:var(--bone);text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:900;box-shadow:var(--shadow)}
+.btn.alt{background:transparent;color:var(--black);box-shadow:none}
+
+.hero{min-height:88vh;display:block}
+.hero-copy{padding:70px 42px 96px;border-right:0;display:flex;flex-direction:column;justify-content:center;gap:42px;max-width:none;min-height:88vh}
+.highlight{display:inline-block;padding:.01em .08em .08em;background:linear-gradient(135deg,var(--wine),var(--rose));color:var(--bone);transform:rotate(-1deg)}
+.hero-sub{max-width:860px;margin-top:0;font-size:24px;line-height:1.22;letter-spacing:-.03em;font-weight:900}
+.hero-soft{max-width:760px;margin-top:28px;font-size:18px;line-height:1.48;font-weight:800;color:var(--muted)}
+
+
+.proof-strip{display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--black);color:var(--bone);border-top:var(--border)}
+.proof-stat{padding:46px 42px;border-right:2px solid var(--bone)}
+.proof-stat:last-child{border-right:0}
+.proof-stat strong{display:block;font-size:clamp(26px,3vw,44px);line-height:.95;letter-spacing:-.04em;text-transform:uppercase}
+.proof-stat span{display:block;margin-top:16px;font-size:12px;line-height:1.5;letter-spacing:.13em;text-transform:uppercase;font-weight:900;color:rgba(243,235,222,.72)}
+
+.symptom-bridge{padding:140px 56px 132px}
+.offer-lite,.pain-cta{padding:132px 56px}
+.symptom-bridge{background:var(--paper)}
+.offer-lite{background:var(--lav)}
+.pain-cta{background:var(--paper);color:var(--black)}
+.symptom-line{max-width:1180px;font-size:clamp(24px,3vw,44px);line-height:1.06;letter-spacing:-.04em;text-transform:uppercase;font-weight:950}
+.symptom-line span{display:inline-block;margin-right:.3em}
+.offer-head{display:grid;grid-template-columns:.82fr 1.18fr;gap:72px;align-items:end;margin-bottom:76px}
+.offer-head p{margin:0;max-width:640px;font-size:19px;line-height:1.42;font-weight:800;color:var(--muted)}
+.section-head{margin:0;font-size:clamp(34px,4.2vw,64px);line-height:.95;letter-spacing:-.055em;text-transform:uppercase;font-weight:950}
+.section-head.quieter{font-size:clamp(30px,3.4vw,52px);line-height:1;letter-spacing:-.045em;max-width:760px}
+
+.fix-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:var(--border);border-left:var(--border);background:var(--bone)}
+.fix-item{padding:22px;border-right:var(--border);border-bottom:var(--border)}
+.fix-item h3{margin:0 0 12px;font-size:clamp(23px,2.3vw,34px);line-height:1;letter-spacing:-.04em;text-transform:uppercase;font-weight:950}
+.fix-item p{margin:0;font-size:16px;line-height:1.38;font-weight:800;color:var(--muted)}
+
+.offer-grid{display:grid;grid-template-columns:repeat(3,1fr);border:var(--border);background:var(--paper);box-shadow:6px 6px 0 var(--wine);margin-top:18px}
+.offer-item{position:relative;padding:22px 22px 24px;border-right:var(--border);display:flex;flex-direction:column;gap:12px;min-height:260px}
+.offer-item:last-child{border-right:0}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:var(--border);background:var(--black);color:var(--bone);font-size:13px;font-weight:950;letter-spacing:-.03em;line-height:1;box-shadow:3px 3px 0 var(--lav)}
+.offer-item h3{margin:0;font-size:clamp(24px,2.4vw,34px);line-height:1;letter-spacing:-.04em;text-transform:uppercase;font-weight:950}
+.offer-item p{margin:0;font-size:15.5px;line-height:1.42;font-weight:800;color:var(--muted)}
+.offer-item .step-note{margin-top:auto;padding-top:8px;font-size:11px;line-height:1.3;letter-spacing:.14em;text-transform:uppercase;font-weight:950;color:var(--wine)}
+
+.pov-lite{display:grid;grid-template-columns:.72fr 1.28fr;background:var(--bone)}
+.pov-label{padding:42px 34px;border-right:var(--border);display:flex;flex-direction:column;justify-content:space-between}
+.pov-copy{padding:42px 42px;background:var(--paper)}
+.pov-copy h2{margin:0;font-size:clamp(34px,4vw,70px);line-height:.9;letter-spacing:-.055em;text-transform:uppercase}
+.pov-copy p{max-width:760px;margin:24px 0 0;font-size:20px;line-height:1.4;font-weight:800;color:var(--muted)}
+.text-link{text-transform:uppercase;font-size:11px;letter-spacing:.16em;font-weight:900;text-decoration:underline;text-underline-offset:4px}
+
+.work-tease-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.work-tile{min-height:360px;padding:24px;border:var(--border);display:flex;align-items:flex-end;position:relative;overflow:hidden;background-size:cover;background-position:center;color:var(--bone)}
+.work-tile:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.74))}
+.work-tile>*{position:relative;z-index:2}
+.work-tile h3{margin:0 0 10px;font-size:clamp(30px,3.4vw,58px);line-height:.9;letter-spacing:-.05em;text-transform:uppercase}
+.work-tile p{margin:0;max-width:520px;font-size:17px;line-height:1.35;font-weight:800;color:rgba(243,235,222,.78)}
+
+.pain-cta-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:96px;align-items:center}
+.pain-cta h2{margin:0;font-size:clamp(38px,5vw,82px);line-height:.88;letter-spacing:-.06em;text-transform:uppercase}
+.pain-cta p{margin:0;max-width:620px;font-size:21px;line-height:1.36;font-weight:800;color:var(--muted)}
+.pain-cta .btn{background:var(--black);color:var(--bone);border-color:var(--black);box-shadow:6px 6px 0 var(--wine)}
+
+.page{padding:148px 56px 172px}
+.page.dark{background:var(--black);color:var(--bone)}
+.page-head{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:92px;margin-bottom:118px}
+.page-head p{max-width:580px;font-size:22px;line-height:1.24;font-weight:800}
+.grid-two{display:grid;grid-template-columns:1fr 1fr;gap:52px}
+.card{min-height:520px;padding:28px;position:relative;overflow:hidden;border:var(--border);background:var(--paper)}
+.card.image{display:flex;align-items:flex-end;color:var(--bone);background-size:cover;background-position:center}
+.card.image:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.06),rgba(0,0,0,.74))}
+.card.image>*{position:relative;z-index:2}
+.card h3{margin:0 0 20px;font-size:clamp(42px,5vw,78px);line-height:.84;letter-spacing:-.06em;text-transform:uppercase;font-weight:950}
+.card p{font-size:18px;line-height:1.35;font-weight:800}
+.outcome-grid,.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;margin-top:78px}
+.outcome,.package{border:var(--border);background:var(--paper);padding:24px}
+.outcome h3,.package h3{margin:0 0 16px;font-size:clamp(28px,3vw,48px);line-height:.9;letter-spacing:-.05em;text-transform:uppercase;font-weight:950}
+.outcome p,.package p{font-size:18px;line-height:1.36;color:var(--muted);font-weight:800}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);border:var(--border);box-shadow:10px 10px 0 var(--wine)}
+.step{min-height:480px;padding:30px;border-right:var(--border);background:var(--paper);display:flex;flex-direction:column;justify-content:space-between}
+.step:last-child{border-right:0;background:var(--black);color:var(--bone)}
+.step h3{margin:24px 0 26px;font-size:clamp(46px,5.2vw,84px);line-height:.82;letter-spacing:-.07em;text-transform:uppercase;font-weight:950}
+.step p{font-size:21px;line-height:1.34;color:var(--muted)}
+.step:last-child p{color:rgba(243,235,222,.7)}
+.note-band{margin-top:74px;margin-bottom:96px;padding:42px 46px;border:var(--border);background:var(--lav);font-size:22px;line-height:1.4;font-weight:900;max-width:980px}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+.blog{min-height:360px;padding:38px;border:var(--border);background:var(--paper);display:flex;flex-direction:column;justify-content:space-between}
+.blog-title{font-size:38px;line-height:.92;letter-spacing:-.05em;font-weight:950;text-transform:uppercase}
+.article{max-width:1080px}
+.article p{font-size:24px;line-height:1.42;color:var(--muted)}
+.page-note{max-width:980px;margin:-58px 0 104px;padding:38px 42px;border:var(--border);background:var(--lav);font-size:20px;line-height:1.45;font-weight:900;color:var(--black)}
+.work-list{display:grid;grid-template-columns:1fr;gap:44px;margin-top:78px}
+.work-row{display:grid;grid-template-columns:.52fr 1.48fr;border:var(--border);background:var(--paper)}
+.work-row-label{padding:34px 36px;border-right:var(--border);display:flex;flex-direction:column;justify-content:space-between;gap:34px}
+.work-row-copy{padding:42px 46px}
+.work-row h3{margin:0 0 12px;font-size:clamp(34px,4vw,64px);line-height:.9;letter-spacing:-.055em;text-transform:uppercase;font-weight:950}
+.work-row p{margin:0;max-width:880px;font-size:19px;line-height:1.38;font-weight:800;color:var(--muted)}
+.small-proof{margin-top:18px;font-size:12px;line-height:1.4;letter-spacing:.14em;text-transform:uppercase;font-weight:950;color:var(--wine)}
+.about{display:grid;grid-template-columns:.85fr 1.15fr;min-height:680px;background:var(--paper)}
+.portrait{border-right:var(--border);background:linear-gradient(rgba(0,0,0,.02),rgba(0,0,0,.18)),url('/mnt/data/ghostwriter_images/generated/a_clean_high_resolution_black_and_white_portr_1.png');background-size:cover;background-position:center}
+.about-copy{padding:138px 76px;display:flex;flex-direction:column;justify-content:center}
+.about-copy p{max-width:760px;font-size:23px;line-height:1.42;font-weight:800;margin:28px 0 0}
+.contact{display:grid;grid-template-columns:1fr 1fr;min-height:680px}
+.contact-left{padding:138px 72px;display:flex;flex-direction:column;justify-content:center;background:var(--black);color:var(--bone)}
+.contact-form{padding:138px 72px;background:var(--bone)}
+.contact-note{margin:0 0 42px;font-size:20px;line-height:1.45;font-weight:800;color:var(--muted)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+input,select,textarea{width:100%;padding:18px;border:var(--border);background:var(--paper);color:var(--black);font-size:16px;font-weight:700;font-family:Arial,Helvetica,sans-serif}
+textarea{min-height:160px;grid-column:1/-1}
+
+footer{
   background:var(--black);
   color:var(--bone);
-  border-radius:999px 999px 8px 8px;
-  font-size:20px;
-  font-weight:900;
+  padding:46px 34px 30px;
+  border-top:8px solid var(--bone);
 }
-.logo-mark:before,
-.logo-mark:after {
-  content:"";
-  position:absolute;
-  top:-9px;
-  border-left:9px solid transparent;
-  border-right:9px solid transparent;
-  border-bottom:16px solid var(--black);
-}
-.logo-mark:before { left:8px; transform:rotate(-18deg); }
-.logo-mark:after { right:8px; transform:rotate(18deg); }
-.logo-text {
-  line-height:.88;
-  font-size:20px;
-  letter-spacing:-.04em;
-  text-transform:uppercase;
-}
+footer .kicker{color:rgba(243,235,222,.68);padding-bottom:14px}
+.news{display:grid;grid-template-columns:1fr minmax(280px,460px);gap:40px;align-items:end}
+.news h2{font-size:clamp(24px,2.8vw,34px);line-height:1.06;letter-spacing:-.03em;text-transform:uppercase;margin:0 0 14px;font-weight:950;max-width:680px}
+.news p{max-width:580px;margin:0;font-size:16px;line-height:1.45;color:rgba(243,235,222,.68);font-weight:700}
+.subscribe{display:flex;gap:12px;flex-wrap:wrap}
+.subscribe input{min-width:260px;background:transparent;color:var(--bone);border-color:rgba(243,235,222,.55)}
+.subscribe input::placeholder{color:rgba(243,235,222,.55)}
+.subscribe .btn{background:var(--bone);color:var(--black);box-shadow:none;border-color:var(--bone)}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:34px;padding-top:22px;border-top:1px solid rgba(243,235,222,.35);font-size:11px;line-height:1.4;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:rgba(243,235,222,.68)}
+.footer-links{display:flex;flex-wrap:wrap;gap:20px}
 
-.menu-toggle { display:none; }
-
-nav {
-  display:flex;
-  align-items:center;
-  gap:22px;
-  font-size:12px;
-  text-transform:uppercase;
-  font-weight:900;
-  letter-spacing:.16em;
-}
-.nav-btn {
-  background:var(--black);
-  color:var(--bone);
-  padding:12px 16px;
-}
-
-/* SHARED TYPOGRAPHY */
-.kicker {
-  margin-bottom:24px;
-  font-size:11px;
-  padding-bottom:25px;
-  line-height:1.4;
-  font-weight:900;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-}
-
-h1,
-.mega {
-  margin:0;
-  font-size:clamp(74px, 11vw, 170px);
-  line-height:.78;
-  letter-spacing:-.08em;
-  text-transform:uppercase;
-  font-weight:950;
-}
-
-.big-head,
-.man-left h2 {
-  margin:0;
-  font-size:clamp(58px, 8vw, 120px);
-  line-height:.82;
-  letter-spacing:-.075em;
-  text-transform:uppercase;
-  font-weight:950;
-}
-
-.body {
-  max-width:720px;
-  font-size:20px;
-  line-height:1.45;
-  color:var(--muted);
-}
-
-/* BUTTONS */
-.buttons {
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-  margin-top:36px;
-}
-.btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:54px;
-  padding:14px 22px;
-  border:var(--border);
-  background:var(--black);
-  color:var(--bone);
-  text-transform:uppercase;
-  letter-spacing:.16em;
-  font-size:11px;
-  font-weight:900;
-  box-shadow:var(--shadow-wine);
-}
-.btn.alt {
-  background:transparent;
-  color:var(--black);
-  box-shadow:none;
-}
-
-/* HERO */
-.hero {
-  min-height:100vh;
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-}
-.hero-copy {
-  padding:56px 42px;
-  border-right:var(--border);
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-.highlight {
-  display:inline-block;
-  padding:.01em .08em .08em;
-  background:linear-gradient(135deg, var(--wine), var(--rose));
-  color:var(--bone);
-  transform:rotate(-1deg);
-}
-.hero-sub {
-  max-width:90%;
-  margin-top:38px;
-  font-size:22px;
-  line-height:1.18;
-  letter-spacing:-.03em;
-  font-weight:900;
-}
-.hero-image {
-  min-height:760px;
-  padding:34px;
-  position:relative;
-  display:flex;
-  align-items:flex-end;
-  color:var(--bone);
-  background:linear-gradient(rgba(0,0,0,.06), rgba(0,0,0,.44)), url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=1800&auto=format&fit=crop');
-  background-size:cover;
-  background-position:center;
-}
-.hero-image:after {
-  content:'DESIRE IS DESIGNED';
-  position:absolute;
-  top:30px;
-  right:-110px;
-  transform:rotate(90deg);
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:.35em;
-}
-.callout {
-  max-width:420px;
-  padding:18px 22px;
-  border:var(--border);
-  background:rgba(216,210,255,.92);
-  color:var(--black);
-  font-size:28px;
-  font-weight:950;
-  line-height:.92;
-  letter-spacing:-.05em;
-  text-transform:uppercase;
-  box-shadow:8px 8px 0 rgba(9,9,9,.82);
-}
-
-/* TICKER */
-.ticker {
-  overflow:hidden;
-  white-space:nowrap;
-  padding:16px 0;
-  background:var(--black);
-  color:var(--bone);
-  font-size:64px;
-  font-weight:950;
-  line-height:1;
-  text-transform:uppercase;
-}
-.ticker span {
-  display:inline-block;
-  padding-left:100%;
-  animation:crawl 24s linear infinite;
-}
-@keyframes crawl {
-  from { transform:translateX(0); }
-  to { transform:translateX(-100%); }
-}
-
-/* MANIFESTO */
-.manifesto {
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  min-height:700px;
-}
-.man-left {
-  background:var(--wine);
-  color:var(--bone);
-  padding:54px 40px;
-  border-right:var(--border);
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-.man-right {
-  display:grid;
-  align-content:center;
-  gap:34px;
-  padding:56px 48px;
-  background:var(--paper);
-}
-.connector {
-  margin-bottom:-10px;
-  font-size:11px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  font-weight:900;
-  color:rgba(9,9,9,.45);
-}
-.big-body {
-  max-width:850px;
-  font-size:clamp(28px, 3vw, 52px);
-  line-height:.98;
-  letter-spacing:-.05em;
-  font-weight:900;
-}
-.mobile-break { display:none; }
-
-/* PROOF */
-.proof {
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-}
-.proof-item {
-  min-height:240px;
-  padding:28px;
-  border-right:var(--border);
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-.proof-item:nth-child(even) { background:#eadcca; }
-.proof-item:last-child { border-right:0; }
-.quote {
-  font-size:clamp(28px, 2.5vw, 44px);
-  line-height:.98;
-  font-weight:950;
-  letter-spacing:-.04em;
-}
-.credit {
-  text-transform:uppercase;
-  font-size:11px;
-  letter-spacing:.16em;
-  font-weight:900;
-  color:var(--muted);
-}
-
-/* GENERAL PAGE SECTIONS */
-.page { padding:var(--section-pad); }
-.page.dark { background:var(--black); color:var(--bone); }
-.page-head {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:end;
-  gap:40px;
-  margin-bottom:56px;
-}
-.page-head p {
-  max-width:580px;
-  font-size:22px;
-  line-height:1.24;
-  font-weight:800;
-}
-.grid-two {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:24px;
-}
-.card {
-  min-height:620px;
-  padding:28px;
-  position:relative;
-  overflow:hidden;
-  border:var(--border);
-  background:var(--paper);
-}
-.card.image {
-  display:flex;
-  align-items:flex-end;
-  color:var(--bone);
-  background-size:cover;
-  background-position:center;
-}
-.card.image:before {
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(rgba(0,0,0,.06), rgba(0,0,0,.74));
-}
-.card.image > * { position:relative; z-index:2; }
-.card h3 {
-  margin:0 0 20px;
-  font-size:clamp(44px, 5vw, 78px);
-  line-height:.84;
-  letter-spacing:-.06em;
-  text-transform:uppercase;
-  font-weight:950;
-}
-.mini-grid {
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:18px;
-  margin-top:18px;
-}
-.mini {
-  height:300px;
-  border:var(--border);
-  background-size:cover;
-  background-position:center;
-}
-
-/* PROCESS */
-.process-grid {
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  border:var(--border);
-  box-shadow:10px 10px 0 var(--wine);
-}
-.step {
-  min-height:520px;
-  padding:32px;
-  border-right:var(--border);
-  background:var(--paper);
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-.step:last-child {
-  border-right:0;
-  background:var(--black);
-  color:var(--bone);
-}
-.step h3 {
-  margin:24px 0 26px;
-  font-size:clamp(52px, 5.8vw, 92px);
-  line-height:.82;
-  letter-spacing:-.07em;
-  text-transform:uppercase;
-  font-weight:950;
-}
-.step p {
-  font-size:22px;
-  line-height:1.34;
-  color:var(--muted);
-}
-.step:last-child p { color:rgba(243,235,222,.7); }
-
-/* THOUGHTS CTA */
-.home-thoughts {
-  display:grid;
-  grid-template-columns:1fr auto;
-  align-items:center;
-  gap:34px;
-  padding:44px 34px;
-  background:var(--black);
-  color:var(--bone);
-}
-.home-thoughts h2 {
-  max-width:900px;
-  margin:0;
-  font-size:clamp(44px, 6vw, 92px);
-  line-height:.84;
-  letter-spacing:-.07em;
-  text-transform:uppercase;
-  font-weight:950;
-}
-
-/* ABOUT */
-.about {
-  display:grid;
-  grid-template-columns:.85fr 1.15fr;
-  min-height:740px;
-  background:var(--paper);
-}
-.portrait {
-  border-right:var(--border);
-  background:linear-gradient(rgba(0,0,0,.06), rgba(0,0,0,.22)), url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop');
-  background-size:cover;
-  background-position:center;
-}
-.about-copy {
-  padding:56px 48px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-.about-copy p {
-  max-width:760px;
-  font-size:24px;
-  line-height:1.24;
-  font-weight:800;
-}
-
-/* BLOG / ARTICLES */
-.blog-grid {
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:18px;
-}
-.blog {
-  min-height:340px;
-  padding:24px;
-  border:var(--border);
-  background:var(--paper);
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-.blog-title {
-  font-size:40px;
-  line-height:.92;
-  letter-spacing:-.05em;
-  font-weight:950;
-  text-transform:uppercase;
-}
-.article { max-width:1080px; }
-.article p {
-  font-size:26px;
-  line-height:1.42;
-  color:var(--muted);
-}
-
-/* CONTACT */
-.contact {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:700px;
-}
-.contact-left {
-  padding:56px 42px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  background:var(--black);
-  color:var(--bone);
-}
-.contact-form {
-  padding:56px 42px;
-  background:var(--bone);
-}
-.form-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-input,
-textarea {
-  width:100%;
-  padding:18px;
-  border:var(--border);
-  background:var(--paper);
-  font-size:16px;
-  font-weight:700;
-}
-textarea {
-  min-height:160px;
-  grid-column:1/-1;
-}
-
-/* FOOTER */
-footer {
-  padding:48px 28px;
-  background:var(--black);
-  color:var(--bone);
-}
-.news {
-  display:grid;
-  grid-template-columns:1fr auto;
-  align-items:end;
-  gap:40px;
-}
-.news h2 {
-  margin:0 0 18px;
-  font-size:clamp(42px, 6vw, 90px);
-  line-height:.88;
-  letter-spacing:-.06em;
-  text-transform:uppercase;
-  font-weight:950;
-}
-.subscribe {
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-}
-.subscribe input {
-  min-width:320px;
-  background:transparent;
-  color:var(--bone);
-  border-color:var(--bone);
-}
-
-.menu-toggle {
-  display: none;
-}
-  
-/* TABLET STACKING */
-@media (max-width:900px) {
-  .hero,
-  .manifesto,
-  .page-head,
-  .grid-two,
-  .proof,
-  .process-grid,
-  .blog-grid,
-  .about,
-  .contact,
-  .news,
-  .mini-grid,
-  .home-thoughts {
-    display:block;
-  }
-  .hero-copy,
-  .man-left,
-  .portrait,
-  .contact-left { border-right:0; border-bottom:var(--border); }
-  .proof-item,
-  .step,
-  .blog,
-  .card,
-  .mini { border-right:0; margin-bottom:18px; }
-  .page,
-  .contact-form,
-  .contact-left,
-  .about-copy,
-  .man-left,
-  .man-right,
-  .hero-copy { padding:40px 22px; }
-  .ticker { font-size:40px; }
-}
-
-/* MOBILE */
-@media (max-width:768px) {
-  .mobile-break { display:inline; }
-
-  header {
-    padding:28px 22px;
-    display:grid;
-    grid-template-columns:1fr auto;
-    align-items:center;
-    gap:22px;
-  }
-  .logo { gap:12px; }
-  .logo-mark { width:48px; height:36px; font-size:18px; }
-  .logo-text { font-size:18px; }
-
-  .menu-toggle {
-    display:flex;
-    flex-direction:column;
-    gap:6px;
-    padding:10px;
-    border:0;
-    background:transparent;
-    cursor:pointer;
-  }
-  .menu-toggle span {
-    display:block;
-    width:30px;
-    height:3px;
-    background:var(--black);
-  }
-
-  nav {
-    grid-column:1 / -1;
-    display:none;
-    width:100%;
-    padding-top:22px;
-    border-top:var(--border);
-  }
-  nav.is-open {
-    display:grid;
-    grid-template-columns:1fr;
-    gap:22px;
-  }
-  nav a {
-    font-size:18px;
-    letter-spacing:.2em;
-  }
-  .nav-btn {
-    display:inline-flex;
-    width:fit-content;
-    padding:16px 22px;
-  }
-
-  .kicker {
-    margin-bottom:42px;
-    font-size:12px;
-    line-height:1.65;
-    letter-spacing:.18em;
-  }
-  h1,
-  .mega {
-    max-width:100%;
-    font-size:clamp(49px, 15vw, 76px);
-    line-height:.9;
-    letter-spacing:-.065em;
-    overflow-wrap:normal;
-    word-break:normal;
-  }
-  .hero-copy {
-    padding:56px 22px 42px;
-  }
-  .highlight {
-    margin:8px 0;
-    padding:.03em .12em .08em;
-  }
-  .hero-sub {
-    margin-top:42px;
-    font-size:22px;
-    line-height:1.16;
-    letter-spacing:-.035em;
-    max-width:92%;
-  }
-  .buttons {
-    margin-top:44px;
-    gap:18px;
-  }
-  .btn {
-    min-height:56px;
-    padding:16px 22px;
-  }
-
-  .hero-image {
-    min-height:430px;
-    padding:28px 22px 52px;
-  }
-  .hero-image:after { display:none; }
-  .callout {
-    max-width:88%;
-    padding:18px 20px;
-    font-size:32px;
-    line-height:.95;
-  }
-  .ticker {
-    font-size:34px;
-    padding:14px 0;
-  }
-
-  .man-left {
-    min-height:440px;
-    padding:54px 22px 58px;
-  }
-  .man-left .kicker:first-child { margin-bottom:38px; }
-  .man-left h2 {
-    margin-bottom:28px;
-    font-size:clamp(56px, 14.5vw, 82px);
-    line-height:.88;
-  }
-  .man-left .kicker:last-child {
-    max-width:92%;
-    font-size:12px;
-    line-height:1.65;
-    letter-spacing:.16em;
-  }
-  .man-right {
-    padding-top:42px;
-  }
-  .connector {
-    margin-bottom:14px;
-    font-size:11px;
-    letter-spacing:.22em;
-  }
+@media(max-width:900px){
+  header{padding:24px 22px;display:grid;grid-template-columns:1fr auto;gap:22px}
+  .logo-mark{width:48px;height:36px;font-size:18px}
+  .logo-text{font-size:18px}
+  .menu-toggle{display:flex;flex-direction:column;gap:6px;background:transparent;border:0;padding:10px}
+  .menu-toggle span{width:30px;height:3px;background:var(--black);display:block}
+  nav{grid-column:1/-1;display:none;width:100%;padding-top:22px;border-top:var(--border)}
+  nav.is-open{display:grid;grid-template-columns:1fr;gap:22px}
+  nav a{font-size:18px;letter-spacing:.2em}
+  .hero,.proof-strip,.offer-head,.offer-grid,.pov-lite,.work-tease-grid,.pain-cta-grid,.page-head,.grid-two,.outcome-grid,.process-grid,.package-grid,.blog-grid,.about,.contact,.news{display:block}
+  .hero-copy,.portrait,.contact-left,.pov-label{border-right:0;border-bottom:var(--border)}
+  .hero{min-height:auto}
+  .hero-copy{padding:70px 22px 88px;min-height:calc(100vh - 86px);justify-content:center;gap:0}
+  .hero-copy>div+div{margin-top:34px}
+  h1{font-size:clamp(52px,14vw,78px);line-height:.94;letter-spacing:-.06em}
+  .big-head{font-size:clamp(36px,11vw,58px)}
+  .section-head,.section-head.quieter{font-size:clamp(30px,8vw,42px);line-height:1.04;letter-spacing:-.04em}
+  .symptom-line{font-size:clamp(26px,8vw,38px);line-height:1.08}
+  .kicker{font-size:12px;line-height:1.65;letter-spacing:.18em;padding-bottom:30px}
+  .hero-sub{max-width:94%;font-size:21px;line-height:1.24;margin-top:0}
+  .hero-soft{max-width:94%;font-size:16px;line-height:1.48;margin-top:22px}
+  .proof-stat{padding:34px 22px;border-right:0;border-bottom:2px solid var(--bone)}
+  .proof-stat:last-child{border-bottom:0}
+  .symptom-bridge{padding:118px 22px 112px}
+  .offer-lite,.pain-cta,.page,.contact-form,.contact-left,.about-copy{padding:104px 22px}
+  .offer-head p{font-size:19px;line-height:1.5;margin-top:30px}
+  .fix-item,.offer-item{border-right:var(--border);border-bottom:var(--border);padding:24px;margin:0}
+  .offer-item{min-height:0}
+  .offer-item:last-child{border-bottom:0}
+  .work-tile{min-height:300px;margin-bottom:18px}
+  .step,.blog,.card,.outcome,.package,.work-row{min-height:auto;margin-bottom:42px;border-right:var(--border)}
+  .work-row{display:block}
+  .work-row-label{border-right:0;border-bottom:var(--border)}
+  .step:last-child{border-right:var(--border)}
+  .article p{font-size:21px}
+  .form-grid{display:block}
+  .form-grid input,.form-grid select,.form-grid textarea{margin-bottom:14px}
+  footer{padding:44px 22px 32px}
+  .subscribe{margin-top:26px}
+  .footer-bottom{display:block}
+  .footer-links{margin-top:18px;gap:16px}
 }
 </style>
 </head>
-
 <body>
 <header>
-  <a class="logo route" href="#home">
-    <span class="logo-mark">BB</span>
-    <span class="logo-text">Big Bad<br>Branding</span>
-  </a>
-
-  <button class="menu-toggle" aria-label="Open menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
+  <a class="logo route" href="#home"><span class="logo-mark">BB</span><span class="logo-text">Big Bad<br>Branding</span></a>
+  <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
   <nav>
     <a class="route" href="#work">Work</a>
     <a class="route" href="#process">Process</a>
@@ -770,151 +250,126 @@ footer {
     <div class="hero-copy">
       <div>
         <div class="kicker">VOICE / POSITIONING / MESSAGING / IDENTITY / WEBSITES</div>
-        <h1>For bold<br>businesses<br>stuck in<br><span class="highlight">boring</span><br>branding.</h1>
+        <h1>For bold businesses<br>stuck in <span class="highlight">boring</span><br>branding.</h1>
       </div>
-
       <div>
-        <div class="hero-sub">
-          You don’t need another generic logo. You need someone who can uncover what already makes your business compelling and build the brand around it.
-        </div>
-        <div class="buttons">
-          <a class="btn route" href="#start">Start With a Brand Plan</a>
-          <a class="btn alt route" href="#process">How It Works</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-image">
-      <div class="callout">Make them care before they click.</div>
-    </div>
-  </section>
-
-  <div class="ticker"><span>Pretty is not enough. Strategy matters. Feeling matters. Desire matters. Pretty is not enough.</span></div>
-
-  <section class="manifesto">
-    <div class="man-left">
-      <div class="kicker">The Belief</div>
-      <h2>A logo is not the brand.</h2>
-      <div class="kicker">THE MEANING ATTACHED TO IT<span class="mobile-break"><br></span> IS WHAT MATTERS.</div>
-    </div>
-
-    <div class="man-right">
-      <div class="connector">In other words:</div>
-      <div class="big-body serif">Your business can look polished and still feel forgettable.</div>
-      <div class="body">
-        <p>Most people come in thinking they need a logo and a website. Usually, they need clarity first.</p>
-        <p>What makes the business matter? What should people feel? Why should anyone care?</p>
-        <p>That is the work before the work. Then the visuals become the vehicle.</p>
+        <div class="hero-sub">For businesses with real substance, real taste,<br>and a brand that has not caught up yet.</div>
+        <div class="hero-soft">You’ve done the hard part. The work is good. The trust is real.<br>You are not the problem — your brand is making people work too hard to see it.</div>
+        <div class="buttons"><a class="btn route" href="#start">Book a Free 20-Minute Fit Call</a><a class="btn alt route" href="#work">See The Work</a></div>
       </div>
     </div>
   </section>
 
-  <section class="proof">
-    <div class="proof-item"><div class="quote">“Exactly what we were looking for.”</div><div class="credit">Client Review</div></div>
-    <div class="proof-item"><div class="quote">“Quickly gained our trust.”</div><div class="credit">Client Review</div></div>
-    <div class="proof-item"><div class="quote">“Turned my vision into something tangible.”</div><div class="credit">Client Review</div></div>
-    <div class="proof-item"><div class="quote">“Professional, organized, and efficient.”</div><div class="credit">Client Review</div></div>
+  <section class="proof-strip">
+    <div class="proof-stat"><strong>Who it's for</strong><span>Businesses with real substance, real taste, and a brand that has not caught up yet.</span></div>
+    <div class="proof-stat"><strong>What hurts</strong><span>The words, visuals, website, or overall brand are making the business feel safer, smaller, or less memorable than it really is.</span></div>
+    <div class="proof-stat"><strong>Where to start</strong><span>Start with a free fit call. If the fit is right, the Brand Plan is the first paid step.</span></div>
   </section>
 
-  <section class="page">
-    <div class="page-head">
-      <div><div class="kicker">Selected Worlds</div><div class="big-head">Not design.<br><span class="serif">Perception.</span></div></div>
-      <p>Fully formed brand experiences designed to change how people feel before they buy.</p>
-    </div>
-    <div class="grid-two">
-      <div class="card image" style="background-image:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1600&auto=format&fit=crop')"><div><div class="kicker">Hospitality Brand</div><h3>Make them want it before they try it.</h3></div></div>
-      <div class="card image" style="background-image:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1600&auto=format&fit=crop')"><div><div class="kicker">Founder Brand</div><h3>A site that feels like a worldview.</h3></div></div>
-    </div>
-    <div class="buttons"><a class="btn alt route" href="#work">See the Work</a></div>
+  <section class="symptom-bridge">
+    <div class="kicker">The usual symptoms</div>
+    <div class="symptom-line"><span>Vague words.</span> <span>Outgrown visuals.</span> <span>A muted point of view.</span> <span>A first impression that undersells the work.</span></div>
   </section>
 
-  <section class="page" style="background:var(--bone)">
-    <div class="page-head">
-      <div><div class="kicker">The Process</div><div class="big-head">Trust first.<br><span class="serif">Reveal after.</span></div></div>
-      <p>The audience never experiences your brand in disconnected fragments. I believe clients should not have to either.</p>
+  <section class="offer-lite">
+    <div class="offer-head">
+      <div><div class="kicker">How It Works</div><div class="section-head quieter">Fit call. Brand Plan. Brand Out Build.</div></div>
+      <p>A better logo cannot carry the whole business. Each step has a job: check the fit, shape the brand, then turn the strategy into words, visuals, and a website if the direction is right.</p>
     </div>
-    <div class="process-grid">
-      <div class="step"><div><div class="kicker">01 / Paid Strategy</div><h3>Brand Plan</h3><p>We shape the voice, positioning, messaging, audience perception, business goals, emotional direction, and visual territory.</p><p>You leave with the document whether you hire me to execute or not.</p></div><div class="kicker">The brief. The trust. The buy-in.</div></div>
-      <div class="step"><div><div class="kicker">02 / My Job</div><h3>I take it<br><span class="serif">and run.</span></h3><p>Once the Brand Plan is approved, I build independently. I come prepared with finished work designed around the strategy.</p></div><div class="kicker">No wasting your time doing my job.</div></div>
-      <div class="step"><div><div class="kicker">03 / Intensive</div><h3>Review.<br>Refine.<br>Launch.</h3><p>The intensive is for presentation, approvals, final refinements, training, and handoff.</p><p>You know when decisions happen and exactly what day you go live.</p></div><div class="kicker">The brand shows up alive.</div></div>
+    <div class="offer-grid">
+      <div class="offer-item"><span class="step-num">01</span><h3>Free Fit Call</h3><p>A free 20-minute conversation to talk through what feels off, what you have outgrown, and whether the Brand Plan is the right first move.</p><div class="step-note">No pressure. No forcing the fit.</div></div>
+      <div class="offer-item"><span class="step-num">02</span><h3>Brand Plan</h3><p>We clarify voice, positioning, messaging, audience perception, and creative direction before anything gets designed. You leave with a written plan for what the brand should say, how it should feel, and what should happen next.</p><div class="step-note">The thinking before the making.</div></div>
+      <div class="offer-item"><span class="step-num">03</span><h3>Brand Out Build</h3><p>If the plan is right, I turn the strategy into identity, website, messaging, and launch direction. You are reviewing a brand built from the plan, not disconnected fragments.</p><div class="step-note">Built from approved direction.</div></div>
     </div>
-    <div class="buttons"><a class="btn alt route" href="#process">Deep Dive the Process</a></div>
   </section>
 
-  <section class="home-thoughts"><h2>Thoughts worth stealing.</h2><a class="btn route" href="#thoughts">Read the Thoughts</a></section>
-
-  <section class="about">
-    <div class="portrait"></div>
-    <div class="about-copy">
-      <div class="kicker">About Jillian</div>
-      <div class="big-head">Your business already feels stronger than the way it currently<br><span class="serif"> shows up.</span></div>
-      <p>I help businesses uncover emotional pull, positioning, messaging, and voice — then build branding and websites that actually communicate it.</p>
-      <p>The visuals matter. But the strategy underneath them matters more.</p>
-      <p>This is not for everyone. <span class="serif">Good.</span></p>
-      <div class="buttons"><a class="btn alt route" href="#about">More About Me</a></div>
+  <section class="pain-cta">
+    <div class="pain-cta-grid">
+      <div><div class="kicker">Next Step</div><h2>Ready to stop explaining around the brand?</h2></div>
+      <div><p>Start with the free fit call. We will figure out what is muting the brand, what needs to change, and whether the Brand Plan is the right first paid step.</p><div class="buttons"><a class="btn route" href="#start">Book a Free 20-Minute Fit Call</a></div></div>
     </div>
   </section>
 </main>
 
 <main id="work" class="view">
   <section class="page">
-    <div class="page-head"><div><div class="kicker">Work</div><div class="big-head">Not design.<br><span class="serif">Perception.</span></div></div><p>Case studies should feel like entering worlds — not scrolling through disconnected deliverables.</p></div>
-    <div class="grid-two"><div class="card image" style="background-image:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1600&auto=format&fit=crop')"><div><div class="kicker">Hospitality / Product</div><h3>Make them want it before they try it.</h3></div></div><div class="card image" style="background-image:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1600&auto=format&fit=crop')"><div><div class="kicker">Founder / Thought Leader</div><h3>A website that feels like a worldview.</h3></div></div></div>
-    <div class="mini-grid"><div class="mini" style="background-image:url('https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=900&auto=format&fit=crop')"></div><div class="mini" style="background-image:url('https://images.unsplash.com/photo-1528825871115-3581a5387919?q=80&w=900&auto=format&fit=crop')"></div><div class="mini" style="background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=900&auto=format&fit=crop')"></div></div>
+    <div class="page-head"><div><div class="kicker">Work</div><div class="big-head">Selected work.<br><span class="serif">Built for perception.</span></div></div><p>Brand work is not just how something looks. It is what people understand faster, feel sooner, and remember after they leave.</p></div>
+    <div class="page-note">Selected work from Jillian’s broader brand and design practice. Big Bad Branding brings that experience into strategy-first brand and website builds for businesses with real substance, real taste, and a brand that has not caught up yet.</div>
+    <div class="grid-two">
+      <div class="card image" style="background-image:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1600&auto=format&fit=crop')"><div><div class="kicker">Brand / Website / Messaging</div><h3>Make the outside match what is already true.</h3><p>Sharper positioning, more intentional visuals, and a brand experience that does not need to be explained around.</p></div></div>
+      <div class="card image" style="background-image:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1600&auto=format&fit=crop')"><div><div class="kicker">Identity / Voice / Digital Presence</div><h3>Make the reason to choose easier to feel.</h3><p>The goal is not decoration. The goal is a first impression that makes the value easier to understand, feel, and remember.</p></div></div>
+    </div>
+    <div class="work-list">
+      <div class="work-row"><div class="work-row-label"><div class="kicker">What changed</div><div class="small-proof">Words / visuals / website</div></div><div class="work-row-copy"><h3>Clearer language.</h3><p>People should not have to decode what you do, why it matters, or why you are the better fit. The work gives the business sharper language before the visual system tries to carry everything.</p></div></div>
+      <div class="work-row"><div class="work-row-label"><div class="kicker">What changed</div><div class="small-proof">Identity / feeling / trust</div></div><div class="work-row-copy"><h3>Stronger presence.</h3><p>The brand should feel like the level of business you are now, not the version that got you started. Stronger presence is not about looking louder. It is about looking more true.</p></div></div>
+      <div class="work-row"><div class="work-row-label"><div class="kicker">What changed</div><div class="small-proof">Structure / direction / decisions</div></div><div class="work-row-copy"><h3>Better decisions.</h3><p>When the strategy is clear, future choices get easier. Messaging, visuals, website structure, and marketing all have a point of view to answer to.</p></div></div>
+    </div>
   </section>
 </main>
 
 <main id="process" class="view">
-  <section class="page"><div class="page-head"><div><div class="kicker">Process</div><div class="big-head">You are not hiring me to watch me design.</div></div><p>Most branding projects waste enormous amounts of client time. This process is built to create trust first, then momentum.</p></div><div class="process-grid"><div class="step"><div><div class="kicker">01 / Paid Strategy</div><h3>Brand Plan</h3><p>We shape the voice, positioning, messaging, audience perception, business goals, emotional direction, and visual territory.</p><p>The Brand Plan is the creative brief and the alignment tool. You keep it whether you continue or not.</p></div><div class="kicker">The brief. The trust. The buy-in.</div></div><div class="step"><div><div class="kicker">02 / My Job</div><h3>I take it<br><span class="serif">and run.</span></h3><p>Once strategy is aligned, the creative burden comes off your shoulders.</p><p>I come prepared with finished work designed around the strategy we already aligned on.</p></div><div class="kicker">No wasting your time doing my job.</div></div><div class="step"><div><div class="kicker">03 / Intensive</div><h3>Review.<br>Refine.<br>Launch.</h3><p>The intensive is for presentation, approvals, final refinements, training, and handoff.</p><p>Fast does not mean rushed. It means focused.</p></div><div class="kicker">The brand shows up alive.</div></div></div></section>
-  <section class="page dark"><div class="page-head"><div><div class="kicker">Fit</div><div class="big-head" style="color:var(--bone)">Not for everyone.<br><span class="serif">Good.</span></div></div><p style="color:rgba(243,235,222,.72)">Best for founders and businesses who want decisive creative leadership, not endless options.</p></div></section>
+  <section class="page">
+    <div class="page-head"><div><div class="kicker">Process</div><div class="big-head">Clarity first.<br><span class="serif">Brand out after.</span></div></div><p>Branding projects drag when everyone starts reacting to pieces before there is a point of view. This process creates the plan first, then uses it to move quickly.</p></div>
+    <div class="note-band">The path is simple: Free Fit Call, Brand Plan, then Brand Out Build if the plan is right and the fit is there.</div>
+    <div class="process-grid">
+      <div class="step"><div><div class="kicker">01 / Free Fit Call</div><h3>Right problem.<br>Right fit.</h3><p>A free 20-minute conversation to talk through where the brand feels off, what you have tried, what is working, and whether the Brand Plan is the right first move.</p><p>This keeps the work focused before anyone commits to a paid next step.</p></div><div class="kicker">No pressure. No forcing the fit.</div></div>
+      <div class="step"><div><div class="kicker">02 / Brand Plan</div><h3>The thinking before the making.</h3><p>We clarify the audience, positioning, voice, message, brand feeling, website priorities, and what needs to change.</p><p>You leave with the strategy, language, creative direction, and recommended next steps whether you continue or not.</p></div><div class="kicker">Voice. Positioning. Direction.</div></div>
+      <div class="step"><div><div class="kicker">03 / Brand Out Build</div><h3>I take it<br><span class="serif">and run.</span></h3><p>If the plan is approved and the fit is there, I build the identity, website, messaging, and launch direction from the strategy.</p><p>You are not reacting to disconnected fragments. You are reviewing a brand built from the plan.</p></div><div class="kicker">Clear direction. Fewer loops.</div></div>
+    </div>
+    <div class="package-grid">
+      <div class="package"><div class="kicker">Entry Point</div><h3>Brand Plan</h3><p>For businesses that need clarity first. It stands alone, so you can use the thinking even if you execute elsewhere.</p></div>
+      <div class="package"><div class="kicker">Next Step</div><h3>Brand Out Build</h3><p>The identity, website, messaging, and creative system built from the approved plan.</p></div>
+      <div class="package"><div class="kicker">Best Fit</div><h3>Decisive founders.</h3><p>People who want creative leadership, clear direction, strong recommendations, and fewer disconnected rounds of feedback.</p></div>
+    </div>
+  </section>
 </main>
 
 <main id="thoughts" class="view">
-  <section class="page"><div class="page-head"><div><div class="kicker">Thoughts</div><div class="big-head">Pretty is not enough.</div></div><p>Thoughts on branding, positioning, emotional perception, websites, and why some brands stay forgettable.</p></div><div class="blog-grid"><a class="blog route" href="#essay-bookmark"><div><div class="kicker">Essay</div><div class="blog-title">A logo is a visual bookmark.</div></div><div class="credit">Read Thought →</div></a><a class="blog route" href="#essay-medical"><div><div class="kicker">Observation</div><div class="blog-title">Most medical websites feel emotionally dead.</div></div><div class="credit">Read Thought →</div></a><a class="blog route" href="#essay-unfinished"><div><div class="kicker">Process</div><div class="blog-title">Why I don’t reveal unfinished work.</div></div><div class="credit">Read Thought →</div></a></div></section>
+  <section class="page">
+    <div class="page-head"><div><div class="kicker">Thoughts</div><div class="big-head">The heavier thinking.</div></div><p>Short essays and observations on brand meaning, emotional perception, websites, and why some businesses stay forgettable even when they look polished.</p></div>
+    <div class="blog-grid">
+      <a class="blog route" href="#essay-bookmark"><div><div class="kicker">Essay</div><div class="blog-title">A logo is a visual bookmark.</div></div><div class="text-link">Read Thought →</div></a>
+      <a class="blog route" href="#essay-medical"><div><div class="kicker">Observation</div><div class="blog-title">Professional does not have to mean emotionally dead.</div></div><div class="text-link">Read Thought →</div></a>
+      <a class="blog route" href="#essay-unfinished"><div><div class="kicker">Process</div><div class="blog-title">Why I don't reveal unfinished work.</div></div><div class="text-link">Read Thought →</div></a>
+    </div>
+  </section>
 </main>
 
-<main id="essay-bookmark" class="view"><section class="page"><div class="page-head"><div><div class="kicker">Essay</div><div class="big-head">A logo is a visual bookmark.</div></div><p>But if there is nothing emotionally meaningful behind it, nobody remembers the story.</p></div><div class="article"><p>Businesses obsess over logos because logos feel tangible. You can hold them. Approve them. Put them on a business card. But a logo without positioning, emotional pull, or point of view is decoration.</p><p>The strongest brands are remembered because they make people feel something before they ever make a sale. The visuals matter — deeply — but only when they reinforce a sharper emotional truth underneath.</p><p>That is why I start with strategy first. Not because strategy is trendy agency language. Because clarity changes everything downstream.</p><p>Once the emotional territory is clear, the visuals stop feeling arbitrary. They start feeling inevitable.</p></div></section></main>
+<main id="essay-bookmark" class="view"><section class="page"><div class="page-head"><div><div class="kicker">Essay</div><div class="big-head">A logo is a visual bookmark.</div></div><p>But if there is nothing emotionally meaningful behind it, nobody remembers the story.</p></div><div class="article"><p>Businesses obsess over logos because logos feel tangible. You can hold them. Approve them. Put them on a business card. But a logo without positioning, emotional pull, or point of view is decoration.</p><p>The strongest brands are remembered because they make people feel something before they ever make a sale. The visuals matter deeply, but only when they reinforce a sharper emotional truth underneath.</p><p>That is why I start with strategy first. Not because strategy is trendy agency language. Because clarity changes everything downstream.</p><p>Once the emotional territory is clear, the visuals stop feeling arbitrary. They start feeling inevitable.</p></div></section></main>
 <main id="essay-medical" class="view"><section class="page"><div class="page-head"><div><div class="kicker">Observation</div><div class="big-head">Most medical websites feel emotionally dead.</div></div><p>Professional does not have to mean emotionally empty.</p></div><div class="article"><p>Most medical brands try so hard to appear trustworthy that they erase every trace of personality. The result is a sea of identical websites filled with stock photography, vague promises, and emotionally neutral messaging.</p><p>But trust is emotional. Clarity is emotional. Confidence is emotional.</p><p>The strongest professional brands understand that patients and clients are not robots evaluating bullet points. They are humans trying to feel safe, understood, hopeful, reassured, or empowered.</p></div></section></main>
-<main id="essay-unfinished" class="view"><section class="page"><div class="page-head"><div><div class="kicker">Process</div><div class="big-head">Why I don’t reveal unfinished work.</div></div><p>The audience never experiences your brand in disconnected fragments. They experience it alive.</p></div><div class="article"><p>Traditional branding process often asks clients to evaluate unfinished ideas out of context: isolated logos, loose directions, half-built websites, disconnected typography systems.</p><p>That creates anxiety instead of clarity.</p><p>I would rather build conviction through strategy first, then reveal the brand as a finished experience. That means clients are reacting to the real emotional system — not trying to imagine what disconnected pieces might eventually become.</p><p>The reveal matters. The feeling matters. People know when something feels complete.</p></div></section></main>
+<main id="essay-unfinished" class="view"><section class="page"><div class="page-head"><div><div class="kicker">Process</div><div class="big-head">Why I don't reveal unfinished work.</div></div><p>The audience never experiences your brand in disconnected fragments. They experience it alive.</p></div><div class="article"><p>Traditional branding process often asks clients to evaluate unfinished ideas out of context: isolated logos, loose directions, half-built websites, disconnected typography systems.</p><p>That creates anxiety instead of clarity.</p><p>I would rather build conviction through strategy first, then reveal the brand as a finished experience. That means clients are reacting to the real emotional system, not trying to imagine what disconnected pieces might eventually become.</p><p>The reveal matters. The feeling matters. People know when something feels complete.</p></div></section></main>
 
-<main id="about" class="view"><section class="about"><div class="portrait"></div><div class="about-copy"><div class="kicker">About Jillian</div><div class="big-head">You are hiring<br><span class="serif">my eye.</span></div><p>Most clients come in thinking they need a logo and a website. Usually, they need someone who can see the thing they cannot fully articulate yet.</p><p>I help businesses uncover emotional pull, positioning, messaging, audience perception, and voice.</p><p>I care more about resonance than trends.</p><p>This is not for everyone. <span class="serif">Good.</span></p></div></section></main>
+<main id="about" class="view"><section class="about"><div class="portrait"></div><div class="about-copy"><div class="kicker">About Jillian</div><div class="big-head">You are hiring<br><span class="serif">my judgment.</span></div><p>Most clients come in thinking they need a logo and a website. Usually, they need someone who can see what is working, what is missing, what is getting in the way, and what the brand needs to become next.</p><p>That is the work: strategy, messaging, visual direction, and enough taste to make the outside match the business people already trust.</p><p>Big Bad Branding is built for businesses with real substance behind them, but a brand that is still making people work too hard to see it.</p><p>The best fit is a founder who wants strong creative direction, not a pile of options to sort through.</p></div></section></main>
 
-<main id="start" class="view"><section class="contact"><div class="contact-left"><div class="kicker">Start</div><div class="big-head" style="color:var(--bone)">Let’s figure out what actually matters.</div><div class="body" style="color:rgba(243,235,222,.72)"><p>If your business feels stronger than the way it currently shows up, we should talk.</p><p>The Brand Plan is paid. Execution is optional.</p></div></div><div class="contact-form"><div class="form-grid"><input placeholder="Name"><input placeholder="Business"><input placeholder="Website"><input placeholder="Budget Comfort Range"><textarea placeholder="What feels off right now?"></textarea></div><div class="buttons" style="margin-top:18px"><a class="btn" href="#">Submit Inquiry</a></div></div></section></main>
+<main id="start" class="view"><section class="contact"><div class="contact-left"><div class="kicker">Start</div><div class="big-head" style="color:var(--bone)">Start with a free fit call.</div><div class="body" style="color:rgba(243,235,222,.72)"><p>The fit call is a free 20-minute conversation to figure out what feels off, whether the Brand Plan is the right first step, and whether this is the kind of problem I can help you solve.</p><p>No pitch deck. No pressure. If it is not the right fit, I will tell you.</p><p>If the fit is right, the paid Brand Plan is the first step. It stands alone, and Brand Out Build can follow from there.</p></div></div><div class="contact-form"><p class="contact-note">Tell me what feels off, what you’ve tried, what worked, what didn’t, and what the brand needs to finally communicate. If it sounds like the right kind of problem, we’ll set up the fit call.</p><div class="form-grid"><input placeholder="Name"><input placeholder="Business"><input placeholder="Website"><select aria-label="Budget range"><option value="">Budget range, if you have one</option><option>Under $5k</option><option>$5k–$10k</option><option>$10k–$18k</option><option>$18k+</option><option>Not sure yet</option></select><textarea placeholder="What feels off, what have you tried, and what do you want the brand to finally communicate?"></textarea></div><div class="buttons" style="margin-top:18px"><a class="btn" href="#">Request the Fit Call</a></div></div></section></main>
 
-<footer>
-  <div class="news"><div><div class="kicker">Newsletter</div><h2>Thoughts on branding, positioning, websites, and why most businesses blend in.</h2><div class="body" style="color:rgba(243,235,222,.72)">Occasional essays, sharp opinions, and brand observations from inside the process.</div></div><div class="subscribe"><input placeholder="Your email"><a class="btn" href="#" style="background:var(--lav);color:var(--black)">Subscribe</a></div></div>
+<footer id="newsletter">
+  <div class="news"><div><div class="kicker">Newsletter</div><h2>Brand notes, website thinking, and occasional strong opinions.</h2><p>Useful observations on positioning, messaging, and why some businesses get remembered while others blend in.</p></div><div class="subscribe"><input placeholder="Your email"><a class="btn" href="#">Subscribe</a></div></div>
+  <div class="footer-bottom"><span>Big Bad Branding</span><div class="footer-links"><a class="route" href="#work">Work</a><a class="route" href="#process">Process</a><a class="route" href="#thoughts">Thoughts</a><a class="route" href="#about">About</a><a class="route" href="#start">Start</a></div></div>
 </footer>
 
 <script>
-const pages = [...document.querySelectorAll('.view')];
-const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('nav');
-
-function showPage() {
-  const id = (location.hash || '#home').replace('#', '');
-  pages.forEach(page => page.classList.toggle('active', page.id === id));
-
-  if (!document.getElementById(id)) {
+const pages=[...document.querySelectorAll('.view')];
+const toggle=document.querySelector('.menu-toggle');
+const nav=document.querySelector('nav');
+function showPage(){
+  const id=(location.hash||'#home').replace('#','');
+  const target=document.getElementById(id);
+  if(target&&target.classList.contains('view')){
+    pages.forEach(page=>page.classList.toggle('active',page.id===id));
+    window.scrollTo({top:0,behavior:'instant'});
+    requestAnimationFrame(()=>window.scrollTo({top:0,behavior:'instant'}));
+    setTimeout(()=>window.scrollTo({top:0,behavior:'instant'}),60);
+  }else{
+    pages.forEach(page=>page.classList.toggle('active',page.id==='home'));
     document.getElementById('home').classList.add('active');
+    if(target){target.scrollIntoView({behavior:'instant'});}else{window.scrollTo({top:0,behavior:'instant'});}
   }
-
-  if (nav && menuToggle) {
-    nav.classList.remove('is-open');
-    menuToggle.classList.remove('is-open');
-  }
-
-  window.scrollTo({ top:0, behavior:'instant' });
+  if(nav&&toggle){nav.classList.remove('is-open');toggle.classList.remove('is-open');}
 }
-
-window.addEventListener('hashchange', showPage);
+window.addEventListener('hashchange',showPage);
 showPage();
-
-if (menuToggle && nav) {
-  menuToggle.addEventListener('click', () => {
-    nav.classList.toggle('is-open');
-    menuToggle.classList.toggle('is-open');
-  });
-}
+if(toggle&&nav){toggle.addEventListener('click',()=>{nav.classList.toggle('is-open');toggle.classList.toggle('is-open');});}
 </script>
 </body>
 </html>
