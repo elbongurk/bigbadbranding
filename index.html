@@ -414,6 +414,89 @@ h1 {
   font-weight: 900;
 }
 
+
+/* TESTIMONIALS */
+
+.testimonials {
+  background: var(--bone);
+}
+
+.testimonial-intro {
+  display: grid;
+  grid-template-columns: .72fr 1.28fr;
+  gap: 34px;
+  align-items: end;
+}
+
+.testimonials h2,
+.client-proof h2 {
+  margin: 16px 0 0;
+  font-size: clamp(34px, 4.7vw, 60px);
+  line-height: .96;
+  letter-spacing: -.055em;
+  text-transform: uppercase;
+  font-weight: 950;
+}
+
+.testimonial-note {
+  margin: 0;
+  padding-left: 20px;
+  border-left: 4px solid var(--wine);
+  font-size: 19px;
+  line-height: 1.36;
+  font-weight: 750;
+  color: rgba(0,0,0,.74);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.testimonial-card {
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  padding: 22px;
+  box-shadow: 4px 4px 0 var(--wine);
+}
+
+.testimonial-quote {
+  margin: 0;
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1;
+  letter-spacing: -.045em;
+  text-transform: uppercase;
+  font-weight: 950;
+}
+
+.testimonial-source {
+  margin-top: 18px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  line-height: 1.3;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--wine);
+}
+
+.client-proof {
+  background: var(--bone);
+}
+
+.client-proof .testimonial-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.client-proof .testimonial-card {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /* HOME PROCESS / WORK */
 
 .process,
@@ -1121,6 +1204,8 @@ h1 {
 
   .buttons,
   .symptom-grid,
+  .testimonial-intro,
+  .testimonial-grid,
   .step-grid,
   .work-grid,
   .footer-grid,
@@ -1150,6 +1235,7 @@ h1 {
   }
 
   .step-card,
+  .testimonial-card,
   .deliverable,
   .detail-card,
   .fit-panel,
@@ -1238,7 +1324,7 @@ h1 {
 
     <section class="symptoms section">
       <div class="wrap">
-        <p class="eyebrow">When The Brand Isn’t Pulling Its Weight</p>
+        <p class="eyebrow">When Your Brand Is Making You Do Too Much Explaining</p>
         <h2>You don’t need to be more impressive.<br />Your brand needs to make it easier to see.</h2>
         <div class="symptom-grid">
           <div class="symptom"><div class="icon">◎</div><p>You keep explaining what makes you different because the brand isn’t doing it for you.</p></div>
@@ -1249,14 +1335,47 @@ h1 {
       </div>
     </section>
 
+
+
+    <section class="testimonials section">
+      <div class="wrap">
+        <div class="testimonial-intro">
+          <div>
+            <p class="eyebrow">Client Proof</p>
+            <h2>What clients have said.</h2>
+          </div>
+          <p class="testimonial-note">Real words from clients who trusted Jillian with brand, design, packaging, and website work.</p>
+        </div>
+
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <p class="testimonial-quote">“Exactly what we were looking for.”</p>
+            <div class="testimonial-source">Client review</div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">“Quickly gained our trust.”</p>
+            <div class="testimonial-source">Client review</div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">“Turned my vision into something tangible.”</p>
+            <div class="testimonial-source">Client review</div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">“Professional, organized, and efficient.”</p>
+            <div class="testimonial-source">Client review</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="process section">
       <div class="wrap">
         <p class="eyebrow">How It Works</p>
         <h2>Plan first. Build privately. Review with momentum.</h2>
         <div class="step-grid">
-          <div class="step-card"><div class="step-flex"><div class="number">01</div><div><h3>01 / Deep Dive + Plan</h3><div class="mini-rule"></div><p>You do the homework, we dig deep, and I deliver the written strategy plan within a week.</p></div></div></div>
-          <div class="step-card"><div class="step-flex"><div class="number">02</div><div><h3>02 / Private Build</h3><div class="mini-rule"></div><p>If you choose a flat-rate path, I build the brand, messaging, and website direction before the review window.</p></div></div></div>
-          <div class="step-card"><div class="step-flex"><div class="number">03</div><div><h3>03 / Review Intensive</h3><div class="mini-rule"></div><p>We use a short review window for approvals, refinements, training, and launch.</p></div></div></div>
+          <div class="step-card"><div class="step-flex"><div class="number">01</div><div><h3>01 / Brand Bite</h3><div class="mini-rule"></div><p>You do the homework, we dig into what’s working, what’s muddy, and what needs to change. Then I turn it into a written Brand Bite with positioning, messaging, creative direction, and a recommended build path.</p></div></div></div>
+          <div class="step-card"><div class="step-flex"><div class="number">02</div><div><h3>02 / Private Build</h3><div class="mini-rule"></div><p>Once the plan is approved, I build the brand, messaging, and website direction privately — so review time is spent reacting to real work, not staring at blank options.</p></div></div></div>
+          <div class="step-card"><div class="step-flex"><div class="number">03</div><div><h3>03 / Review Intensive</h3><div class="mini-rule"></div><p>We use a focused review window to approve, refine, train, and launch without dragging the project out for months.</p></div></div></div>
         </div>
       </div>
     </section>
@@ -1325,7 +1444,7 @@ h1 {
         <div class="detail-list">
           <div class="detail-card"><span class="detail-label">00 / Fit Call</span><h3>First, we see if this is the right problem.</h3><p>A quick conversation about what feels off, what you are trying to build, and whether this is the right fit.</p></div>
           <div class="detail-card"><span class="detail-label">01 / Homework + Deep Dive</span><h3>We get the good stuff out of your head.</h3><p>You complete a questionnaire and share inspiration, references, and what you definitely do not want. Then we use a focused interview to get to the real goals and pain points.</p></div>
-          <div class="detail-card"><span class="detail-label">02 / Written Strategy Plan</span><h3>You get the plan within a week.</h3><p>I turn the deep dive into a written plan with positioning, voice, message direction, creative recommendations, and flat-rate options. You keep it either way.</p></div>
+          <div class="detail-card"><span class="detail-label">02 / Written Brand Bite</span><h3>You get the plan within a week.</h3><p>I turn the deep dive into a written plan with positioning, voice, message direction, creative recommendations, and flat-rate options. You keep it either way.</p></div>
           <div class="detail-card"><span class="detail-label">03 / Private Build</span><h3>I go make the thing.</h3><p>If you choose a flat-rate path, I build behind the scenes before our scheduled review window.</p></div>
           <div class="detail-card"><span class="detail-label">04 / Review Intensive</span><h3>The work shows up built.</h3><p>We use a short window for approvals, refinements, training, and launch support — not inventing the brand live.</p></div>
         </div>
@@ -1363,20 +1482,20 @@ h1 {
       <div class="wrap">
         <p class="eyebrow">Flat-Rate Paths</p>
         <h2>Three ways the build can go.</h2>
-        <p class="plan-note">The Strategy Plan is $750. If we build together, that amount is credited toward your next phase. After the written plan, you’ll get flat-rate options for the build. Most clients land in the middle: enough room to build the brand and website properly, without turning the project into a sprawling agency engagement.</p>
+        <p class="plan-note">The Brand Bite is $750. If we build together, that amount is credited toward your next phase. After the written plan, you’ll get flat-rate options for the build. Most clients land in the middle: enough room to build the brand and website properly, without turning the project into a sprawling agency engagement.</p>
 
         <div class="strategy-price">
           <p class="eyebrow">Paid First Step</p>
-          <h3>Strategy Plan / $750</h3>
-          <p>Includes the homework, focused deep-dive interview, written strategy document delivered within a week, and flat-rate build options. You keep the document either way. If we build together, the $750 is credited toward your next phase.</p>
+          <h3>Brand Bite / $750</h3>
+          <p>Includes the homework, focused deep-dive interview, written Brand Bite delivered within a week, and flat-rate build options. You keep the document either way. If we build together, the $750 is credited toward your next phase.</p>
         </div>
 
         <div class="plan-grid">
           <div class="plan-card">
             <p class="eyebrow">Lighter Ask</p>
-            <h3>Small Bite</h3>
+            <h3>Focused Build</h3>
             <div class="plan-price">Starting around $4.5k</div>
-            <p>For businesses that need a sharper direction, a typographic logo direction, messaging cleanup, and a small/simple site without a full overhaul.</p>
+            <p>For businesses that need sharper positioning, messaging cleanup, a simple identity direction, and a small website without a full overhaul.</p>
           </div>
 
           <div class="plan-card featured">
@@ -1484,6 +1603,31 @@ h1 {
         </article>
       </div>
     </section>
+
+    <section class="client-proof section">
+      <div class="wrap">
+        <p class="eyebrow">What Clients Have Said</p>
+        <h2>The work has to feel clear, useful, and real.</h2>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <p class="testimonial-quote">“You’re the best, thank you!”</p>
+            <div class="testimonial-source">N. Kanakaris</div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">“Turned my vision into something tangible.”</p>
+            <div class="testimonial-source">Client review</div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">“Quickly gained our trust.”</p>
+            <div class="testimonial-source">Client review</div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">“Professional, organized, and efficient.”</p>
+            <div class="testimonial-source">Client review</div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </section>
 
@@ -1588,7 +1732,7 @@ h1 {
       <div>
         <div class="footer-label">Start Here</div>
         <h2>Branding with a point of view.</h2>
-        <p class="footer-copy">We’ll talk through what’s feeling off, what you’re trying to build, and whether the Strategy Plan makes sense as the next move.</p>
+        <p class="footer-copy">We’ll talk through what’s feeling off, what you’re trying to build, and whether a Brand Bite is the right next move.</p>
         <a class="btn" href="https://calendly.com/elbongurk/elbongurk-design-fit-call-clone-2">Book a Fit Call</a>
       </div>
 
